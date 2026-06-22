@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ds4color"
+version = "1.0.0"
+description = "Set the DualShock 4 lightbar to a solid colour on macOS over USB or Bluetooth"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [{ name = "Abhyudit Singh", email = "abhyudit.singh@research.iiit.ac.in" }]
+keywords = ["dualshock4", "ds4", "playstation", "controller", "lightbar", "macos", "hid"]
+dependencies = ["hidapi>=0.14"]
+classifiers = [
+    "Environment :: MacOS X",
+    "Operating System :: MacOS :: MacOS X",
+    "Programming Language :: Python :: 3",
+    "Topic :: Games/Entertainment",
+]
+
+[project.urls]
+Homepage = "https://github.com/bitmap4/ds4-lightbar-macos"
+Issues = "https://github.com/bitmap4/ds4-lightbar-macos/issues"
+
+[project.scripts]
+ds4color = "ds4color.cli:main"
+
+[tool.setuptools]
+packages = ["ds4color"]
