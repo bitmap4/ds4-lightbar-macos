@@ -116,7 +116,7 @@ def apply(rgb, serial=None):
         if rid is None:
             return 4, "connected but no input yet, leaving the light alone"
         report_id, length = rid
-        over_bt = report_id == 0x11 or length >= 70
+        over_bt = d.get("bus_type") == 2 or report_id == 0x11 or length >= 70
         rep = _bt_report(*rgb) if over_bt else _usb_report(*rgb)
         if h.write(rep) <= 0:
             return 6, "input works but writing the color failed"
