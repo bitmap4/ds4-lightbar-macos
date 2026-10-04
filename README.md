@@ -75,8 +75,9 @@ value over USB). Leave it `null` to match any DS4.
 
 Setting the lightbar is a HID output report. Over USB it's report `0x05`; over
 Bluetooth it's report `0x11` with a CRC32 the controller checks before it
-listens. The tool figures out which transport you're on by looking at the input
-report the pad sends back, then writes the matching one. That's the whole trick.
+listens. The tool figures out which transport you're on from the bus type
+hidapi reports, falling back to the input report the pad sends back, then
+writes the matching one. That's the whole trick.
 
 ## Uninstall
 
